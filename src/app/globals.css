@@ -24,7 +24,6 @@
     --border-color: rgba(55, 53, 47, 0.09);
     --hover-background: rgba(55, 53, 47, 0.06);
     --active-background: rgba(55, 53, 47, 0.16);
-    --color-back: yellow;
   }
   .dark {
     --shadow-color: rgba(255, 255, 255, 0.094);
