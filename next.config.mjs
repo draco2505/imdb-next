@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    missingSuspenseWithCSRBailout: false,
-  },
-  images: {
+ images: {
     domains: ['image.tmdb.org'],
   }
 };

@@ -15,10 +15,7 @@ const Home = async ( { searchParams } ) => {
     });
     resolve(response);
   }, 2000);
-  })
-
-
- 
+  }) 
 
   const data = await res.json();
   if(!res.ok) {
@@ -27,9 +24,9 @@ const Home = async ( { searchParams } ) => {
   const results = data.results;
  console.log(results)
   return (
-    <div >
-          <Results results={results} />
-    </div>
+      <div >
+            <Results results={results} />
+      </div>
   )
 }
 

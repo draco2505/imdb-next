@@ -1,3 +1,4 @@
+import { Suspense} from 'react'
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import { Providers } from "@/app/Providers";
@@ -25,17 +26,20 @@ export default function RootLayout({ children }) {
     <html lang="en" className="dark"  suppressHydrationWarning >
       <body className="dark:bg-gray-500 "
       >
-        <Providers 
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          <Navbar />
-          <SearchBox />
-          {children}
-        </Providers>
+        <Suspense>
+          <Providers 
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Header />
+            <Navbar />
+            <SearchBox />
+            {children}
+          </Providers>
+
+        </Suspense>
       </body>
     </html>
   );
