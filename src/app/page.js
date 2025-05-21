@@ -4,7 +4,8 @@ const API_KEY = process.env.API_KEY;
 const TOKEN_API = process.env.TOKEN_API;
 
 const Home = async ( { searchParams } ) => {
-  const genre = searchParams.genre || 'fetchTrending';
+  const params = await searchParams;
+  const genre = params.genre || 'fetchTrending';
   const res = await new Promise((resolve) => { 
     setTimeout(async () => {
     const response = await fetch(`https://api.themoviedb.org/3${
@@ -20,12 +21,11 @@ const Home = async ( { searchParams } ) => {
  
 
   const data = await res.json();
-  console.log(res)
   if(!res.ok) {
     throw new Error('Failed to fetch data');
   }
   const results = data.results;
- 
+ console.log(results)
   return (
     <div >
           <Results results={results} />
